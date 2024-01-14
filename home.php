@@ -38,7 +38,7 @@
                 </div>
                 <h1>See The Beauty of The World Through My Lense</h1>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, nobis tempore, sequi nostrum laborum ipsa deserunt voluptas odit qui architecto asperiores a ut accusamus similique ipsum tempora eligendi, aut quo!
+                    Hello, I'm Malcolm Lismore, a dedicated photographer from Scotland's captivating North West coast. Specializing in landscapes, wildlife, weddings, and special events, I craft images to preserve the essence of each moment. From rugged scenery to vibrant celebrations, I'm committed to capturing the uniqueness of your special day. 📷✨
                 </p>
                 <div class="primary_btn header_btn">
                 <a href="mailto:ima7str@gmail.com">Contact Me</a>
@@ -70,6 +70,6 @@
 
 
 
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
