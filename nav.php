@@ -3,7 +3,7 @@
         <img src="imgs/logo_main.png" alt="Malcolm's Logo">
     </a>
     <ul class="nav_manu">
-        <li><a href="index.php">Home</a></li>
+        <li><a href="home.php">Home</a></li>
         <li><a href="about.php">About</a></li>
         <li><a href="gallery.php">Gallery</a></li>
         <li><a href="pricing.php">Pricing</a></li>
