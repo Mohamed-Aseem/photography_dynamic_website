@@ -18,6 +18,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- CSS File -->
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 
 <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
