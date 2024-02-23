@@ -27,7 +27,7 @@
             </article>
             <article class="album">
                 <div class="album_thumbnail">
-                    <img src="imgs/landscape/landscape_01-1.jpg" alt="Landscape">
+                    <img src="imgs/landscape_01-1.jpg" alt="Landscape">
                 </div>
                 <div class="album_info">
                     <a href="gallery_landscape.php" class="category_button">Landscape</a>
@@ -38,7 +38,7 @@
             </article>
             <article class="album">
                 <div class="album_thumbnail">
-                    <img src="imgs/coastal_bird/bird_02.jpg" alt="Coastal Birds">
+                    <img src="imgs/bird_02.jpg" alt="Coastal Birds">
                 </div>
                 <div class="album_info">
                     <a href="gallery_coastal_birds.php" class="category_button">Coastal Birds</a>
@@ -49,7 +49,7 @@
             </article>
             <article class="album">
                 <div class="album_thumbnail">
-                    <img src="imgs/wedding/wedding_04-1.jpg" alt="Wedding">
+                    <img src="imgs/wedding_04-1.jpg" alt="Wedding">
                 </div>
                 <div class="album_info">
                     <a href="gallery_wedding.php" class="category_button">Weddings</a>
@@ -60,7 +60,7 @@
             </article>
             <article class="album">
                 <div class="album_thumbnail">
-                    <img src="imgs/portraits/port_03-1.jpg" alt="Portraits">
+                    <img src="imgs/port_03-1.jpg" alt="Portraits">
                 </div>
                 <div class="album_info">
                     <a href="gallery_portraits.php" class="category_button">Portraits</a>
@@ -71,7 +71,7 @@
             </article>
             <article class="album">
                 <div class="album_thumbnail">
-                    <img src="imgs/special_event/sp_event_05-1.jpg" alt="Special Events">
+                    <img src="imgs/sp_event_05-1.jpg" alt="Special Events">
                 </div>
                 <div class="album_info">
                     <a href="gallery_special_event.php" class="category_button">Special Event</a>
@@ -82,7 +82,7 @@
             </article>
             <article class="album">
                 <div class="album_thumbnail">
-                    <img src="imgs/maternity/baby_port_02-1.jpg" alt="Wild Life">
+                    <img src="imgs/baby_port_02-1.jpg" alt="Wild Life">
                 </div>
                 <div class="album_info">
                     <a href="gallery_maternity.php" class="category_button">Baby Portraits</a>
@@ -94,27 +94,6 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="main.js"></script><script src="main.js"></script>
+    <script src="js/main.js"></script><script src="main.js"></script>
 </body>
 </html>
