@@ -74,7 +74,7 @@
                     <img src="imgs/sp_event_05-1.jpg" alt="Special Events">
                 </div>
                 <div class="album_info">
-                    <a href="ggallery/allery_special_event.php" class="category_button">Special Event</a>
+                    <a href="gallery/gallery_special_event.php" class="category_button">Special Event</a>
                     <h4 class="album_details">
                         <a href="gallery/gallery_special_event.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima commodi soluta aut. Iusto distinctio vitae, </a>
                     </h4>
@@ -94,6 +94,6 @@
         </div>
     </div>
 
-    <script src="js/main.js"></script><script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
