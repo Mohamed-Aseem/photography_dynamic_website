@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,21 +17,6 @@
             <h1>Login</h1>
 
             <?php
-                // if(isset($_POST['submit'])){
-                //     $aName = $_POST['name'];
-                //     $aPassword = $_POST['password'];
-
-                //     $sql = "SELECT * FROM admin WHERE aName = '$aName' AND aPassword = '$aPassword'";
-
-                //     $res = $con->query($sql);
-                    
-                //     if($res->num_rows>0){
-                //         $row = $res->fetch_assoc();
-                //         echo "<script>location.replace('ahome.php')</script>";
-                //     }else{
-                //         echo "<p class='error'>Invalid User Details!</p>";
-                //     }
-                // }
 
                 if(isset($_POST['submit']))
                 {
@@ -39,6 +28,8 @@
                     $res = $con->query($sql);
 
                     if($res -> num_rows > 0){
+                        $row = $res -> fetch_assoc();
+                        $_SESSION['adminID'] = $row['admin_id'];
                         echo "<script>location.replace('admin_dashboard.php')</script>";
                     }
                     else{
