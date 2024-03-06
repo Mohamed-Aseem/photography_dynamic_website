@@ -34,12 +34,12 @@
             <div class="contact_right">
                 <p>Fill out the form and list the details of what you are looking for specifically in your photoshoot, and I will be in touch with you to finalize the details!</p>
                 <form action="https://formsubmit.co/7a67bcb11677bd7b5e048a65f382448f" class="contact_form" method="post">
-                    <input type="text" name="Name" placeholder="Full Name" onclick="myFunction()">
-                    <input type="email" name="Email" placeholder="Email Address" onclick="myFunction()">
-                    <input type="text" name="contact_no" placeholder="Contact No" onclick="myFunction()">
-                    <input type="text" name="date" placeholder="Date" onclick="myFunction()">
-                    <input type="text" name="location" placeholder="Location" onclick="myFunction()">
-                    <textarea rows="7" name="Message" placeholder="Message" onclick="myFunction()"></textarea>
+                    <input type="text" name="Name" placeholder="Full Name">
+                    <input type="email" name="Email" placeholder="Email Address">
+                    <input type="text" name="contact_no" placeholder="Contact No">
+                    <input type="text" name="date" placeholder="Date">
+                    <input type="text" name="location" placeholder="Location">
+                    <textarea rows="7" name="Message" placeholder="Message"></textarea>
                     <button type="submit" class="primary_btn contact_btn">Send</button>
                 </form>
             </div>
