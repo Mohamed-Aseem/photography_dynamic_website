@@ -13,7 +13,6 @@ include "dbConnection.php";
     <?php
         include "header_admin_mange.php";
     ?>
-
 </head>
 <body>
     <div class="main-content-add-picture">
@@ -25,7 +24,22 @@ include "dbConnection.php";
                 if(isset($_POST['submit'])){
                     $target_dir = "../upload/";
                     $target_file = $target_dir.basename($_FILES['img']['name']);
-                    if($result = move_uploaded_file($_FILES['img']['tmp_name'],$target_file)){
+                    
+                    //Check the file exists
+                    if(file_exists($target_file)){
+                        echo "
+                            <script>
+                                swal({
+                                title: 'Error',
+                                text: 'The File Already Exists, Please Rename The File & Upload!',
+                                icon: 'error',
+                                buttons: 'Ok',
+                                dangerMode: true
+                                });
+                            </script>
+                        ";
+                    }
+                    else if($result = move_uploaded_file($_FILES['img']['tmp_name'],$target_file)){
                         $sql = "INSERT INTO photography VALUES ('','{$target_file}','{$_POST['category']}','{$_POST['type']}')";
                         $res = $con->query($sql);
                         
