@@ -23,8 +23,10 @@
 <!-- Boostrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
-
 <!-- CSS File -->
 <link rel="stylesheet" href="../css/style_admin.css">
 
 <link rel="shortcut icon" href="../imgs/logo.png" type="image/x-icon">
+
+<!--------------------------------------- Alert Box CDN --------------------------------------->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
