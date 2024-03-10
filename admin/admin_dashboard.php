@@ -7,7 +7,6 @@ if(!isset($_SESSION["adminID"])){
 include "dbConnection.php";
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,8 +46,8 @@ include "dbConnection.php";
                 </a>
             </div>
 
-            <div class="menu-btn item">
-                <a href="logout.php">
+            <div class="menu-btn item logout">
+                <a>
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </a>
@@ -59,9 +58,6 @@ include "dbConnection.php";
 
 
     <div class="content-div div1 active_menu">
-
-
-
 
         <!---------------------------- Admin Dashboard ----------------------------->
         <div class="header-wrapper" data-aos="fade-in" data-aos-delay="150">
@@ -144,11 +140,7 @@ include "dbConnection.php";
             </div>
         </div>
 
-
-
-
         <!------------------------------------- Chart ----------------------------------------->
-
 
         <?php
             //Function for get data from enquiry table
@@ -215,7 +207,7 @@ include "dbConnection.php";
 
                     }
                     return $rowsCount;
-                    
+
                 }else if($count == 5){
                     $rowsCount = 0;
                     $sql1 = "SELECT DATE_SUB(CURRENT_DATE(), INTERVAL 4 DAY) AS DATE;";
@@ -228,13 +220,11 @@ include "dbConnection.php";
 
                     }
                     return $rowsCount;
-                    
+
                 }
-                
+
             }
             //End getDate Function
-
-            
 
 
             //Get data for today
@@ -273,9 +263,6 @@ include "dbConnection.php";
 
     </div>
 
-
-
-
     <!------------------------------------------- Albums ---------------------------------------->
 
     <div class="content-div div2" >
@@ -286,7 +273,6 @@ include "dbConnection.php";
             <h3>Time : <span class='currentTime'></span></h3>
             </div>
         </div>
-
 
         <div class="card_container">
             <div class="container">
@@ -309,6 +295,7 @@ include "dbConnection.php";
                                     </thead>
                                     <tbody>
                                     <?php
+                                        //View All Data in Photography Dashboard
                                         $sql = "SELECT * FROM photography";
                                         $res = $con->query($sql);
 
@@ -317,17 +304,18 @@ include "dbConnection.php";
 
                                             while($row= $res->fetch_assoc()){
                                                 $i++;
-                                                echo "  <tr>
-                                                            <td>{$i}</td>
-                                                            <td><a href='{$row["image_url"]}' target='_blank' class='atag'>View</a></td>
-                                                            <td>{$row["album"]}</td>
-                                                            <td>{$row["type"]}</td>
-                                                            <td><a href='update/update-photography.php?pid={$row["photography_id"]}' class='btn btn-success' name='update'>Update</a></td>
-                                                            <td><a href='delete/delete-photography.php?pid={$row["photography_id"]}' class='btn btn-danger'>Delete</a></td>
-                                                        </tr>                                    
+                                                $type = ucfirst($row["type"]);
+                                                echo "  
+                                                    <tr>
+                                                        <td>{$i}</td>
+                                                        <td><a href='{$row["image_url"]}' target='_blank' class='atag'>View</a></td>
+                                                        <td>{$row["album"]}</td>
+                                                        <td>{$type}</td>
+                                                        <td><a href='update/update.php?pid={$row['photography_id']}' class='btn btn-success' name='update'>Update</a></td>
+                                                        <td class = 'myBtn'><a class='btn btn-danger deleteBtn-img' data-value='{$row['photography_id']}'>Delete</a></td>
+                                                    </tr>
                                                 ";
                                             }
-
                                                 echo "
                                                         </tbody>
                                                     </table>
@@ -337,8 +325,39 @@ include "dbConnection.php";
                                         else{
                                             echo"   <div class='alert_message error'>
                                                         <p>No Images Available In Database</p>
-                                                    </div>";
+                                                    </div>
+                                                    </tbody>
+                                                </table>
+                                            </div>";
                                         }
+                                        echo "
+                                            <script>
+                                                let btn = document.querySelectorAll('.deleteBtn-img');
+                                                for (let i = 0; i < btn.length; i++){
+                                                    const item = btn[i];
+                                                    let valueOfBtn = item.dataset.value;
+                                                    item.addEventListener('click', handleClick);
+                                                }
+
+                                                function handleClick() {
+                                                    const item = this;
+                                                    let valueOfBtn = item.dataset.value;
+                                                    swal({
+                                                        title: 'Delete Conformation',
+                                                        text: 'Do you want to Delete?',
+                                                        icon: 'warning',
+                                                        buttons: ['No','Yes'],
+                                                        dangerMode: true,
+                                                    })
+                                                    .then((willLogout) => {
+                                                        if (willLogout) {
+                                                            item.href = 'delete/delete-photography.php?pid='+valueOfBtn;
+                                                            item.removeEventListener('click', handleClick);
+                                                            item.click();
+                                                        }
+                                                    });
+                                                }
+                                            </script>";
                                     ?>
                         </div>
                     </div>
@@ -348,10 +367,6 @@ include "dbConnection.php";
 
 
     </div>
-    
-    
-
-
 
     <!------------------------------------------ Enquiry ----------------------------------->
 
@@ -363,8 +378,6 @@ include "dbConnection.php";
             <h3>Time : <span class='currentTime'></span></h3>
             </div>
         </div>
-        
-
 
         <div class="card_container">
             <div class="row justify-content-center">
@@ -377,6 +390,7 @@ include "dbConnection.php";
                                         <th>#</th>
                                         <th>Full Name</th>
                                         <th>Email</th>
+                                        <th>Location</th>
                                         <th>Message</th>
                                         <th>Date</th>
                                         <th>Action</th>
@@ -395,28 +409,57 @@ include "dbConnection.php";
                                                         <td>{$i}</td>
                                                         <td>{$row['customer_name']}</td>
                                                         <td>{$row['email']}</td>
+                                                        <td>{$row['location']}</td>
                                                         <td>{$row['message']}</td>
                                                         <td>{$row['date']}</td>
-                                                        <td><a href='delete/delete-enquiry.php?eid={$row["enquiry_id"]}' class='btn btn-danger'>Delete</a></td>
+                                                        <td><a class='btn btn-danger deleteBtn-Enq' data-value='{$row['enquiry_id']}'>Delete</a></td>
                                                     </tr>
                                                 ";
                                             }
 
                                             echo "
-                                                        </tbody>
-                                                    </table>
-                                                </div>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                             ";
 
                                         }else{
                                             echo"   <div class='alert_message error'>
-                                                        <p>No Images Available In Database</p>
-                                                    </div>";
+                                                        <p>No Enquiries Available In Database</p>
+                                                    </div>
+                                                    </tbody>
+                                                </table>
+                                            </div>";
                                         }
 
+                                        echo "
+                                            <script>
+                                                let btnEnq = document.querySelectorAll('.deleteBtn-Enq');
+                                                for (let i = 0; i < btnEnq.length; i++){
+                                                    const item = btnEnq[i];
+                                                    let valueOfBtn = item.dataset.value;
+                                                    item.addEventListener('click', handleClick);
+                                                }
 
-
-
+                                                function handleClick() {
+                                                    const item = this;
+                                                    let valueOfBtn = item.dataset.value;
+                                                    swal({
+                                                        title: 'Delete Conformation',
+                                                        text: 'Do you want to Delete?',
+                                                        icon: 'warning',
+                                                        buttons: ['No','Yes'],
+                                                        dangerMode: true,
+                                                    })
+                                                    .then((willDelete) => {
+                                                        if (willDelete) {
+                                                            item.href = 'delete/delete-enquiry.php?eid='+valueOfBtn;
+                                                            item.removeEventListener('click', handleClick);
+                                                            item.click();
+                                                        }
+                                                    });
+                                                }
+                                            </script>";
                                     ?>
                     </div>
                 </div>
@@ -424,8 +467,27 @@ include "dbConnection.php";
         </div>
     </div>
 
+    <!-------------------------- Alert Message Configuration ------------------------------------->
+    <?php
+        // 1.Alert Message wiht Ok Button
+        if(isset($_SESSION['statusTitle']) && $_SESSION['statusTitle'] !== ''){
+            echo "
+                <script>
+                    swal({
+                    title: '{$_SESSION['statusTitle']}',
+                    text: '{$_SESSION['statusText']}',
+                    icon: '{$_SESSION['statusIcon']}',
+                    buttons: 'Ok'
+                    });
+                </script>
+            ";
 
-    
+            unset($_SESSION['statusTitle']);
+            unset($_SESSION['statusText']);
+            unset($_SESSION['statusIcon']);
+        }
+    ?>
+
     <script>
         // Scripts for chart
         window.onload = function() {
@@ -445,13 +507,15 @@ include "dbConnection.php";
                 }]
             });
             chart.render();
-
             //End of chart
+
+
 
             //Remove Watermark
             let waterMark = document.querySelector(".canvasjs-chart-credit");
             waterMark.textContent = "";
-            
+
+
             AOS.init({
                 duration: 1500,
                 offset: 80
@@ -464,7 +528,7 @@ include "dbConnection.php";
                 })
             })
         };
-        
+
 
         //Showing divs when button press function
         let variables = document.querySelectorAll(".content-div");
@@ -484,19 +548,31 @@ include "dbConnection.php";
                 const classN = item.classList[1];
                 if(classN == y){
                     item.classList.add("active_menu");
-                    console.log(item.classList);
                 }
             });
         };
 
-        
-
-        
-
-
-        
+        //Logout Alert Message using Sweet Alert
+        let logout = document.querySelector(".logout");
+        logout.addEventListener('click',()=>{
+            swal({
+            title: "Logout Conformation",
+            text: "Do you want to logout?",
+            icon: "warning",
+            buttons: ['No','Yes'],
+            dangerMode: true,
+            })
+            .then((willLogout) => {
+            if (willLogout) {
+                location.replace("logout.php");
+            }
+            });
+        });
 
     </script>
+
+    <!--------------------------------------- Alert Box CDN --------------------------------------->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -504,6 +580,6 @@ include "dbConnection.php";
 
     <!-------------------------------------- Canvas Chart CDN ------------------------------------->
     <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="../js/main_admin.js"></script>
 </body>
 </html>
