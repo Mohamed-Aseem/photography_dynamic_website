@@ -1,5 +1,24 @@
 <?php
     session_start();
+    //Check Username password is correct
+    if(isset($_POST['submit']))
+    {   
+        include "dbConnection.php";
+        $aName = $_POST['username'];
+        $aPassword = $_POST['password'];
+
+        $sql = "SELECT * FROM admin WHERE username = '{$aName}' AND password = '{$aPassword}'; ";
+        $res = $con->query($sql);
+
+        if($res -> num_rows > 0){
+            $row = $res -> fetch_assoc();
+            $_SESSION['adminID'] = $row['admin_id'];
+            echo "<script>location.replace('admin_dashboard.php')</script>";
+        }
+        else{
+            $error = "<p class='error'>Invalid User Details!</p>";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -15,35 +34,18 @@
     <div class="wrapper">
         <form action="admin-login.php" method="POST">
             <h1>Login</h1>
-
+            <!-- Display Error Message -->
             <?php
-
-                if(isset($_POST['submit']))
-                {
-                    include "dbConnection.php";
-                    $aName = $_POST['username'];
-                    $aPassword = $_POST['password'];
-
-                    $sql = "SELECT * FROM admin WHERE username = '{$aName}' AND password = '{$aPassword}'; ";
-                    $res = $con->query($sql);
-
-                    if($res -> num_rows > 0){
-                        $row = $res -> fetch_assoc();
-                        $_SESSION['adminID'] = $row['admin_id'];
-                        echo "<script>location.replace('admin_dashboard.php')</script>";
-                    }
-                    else{
-                        echo "<p class='error'>Invalid User Details!</p>";
-                    }
+                if(isset($error)){
+                    echo $error;
                 }
             ?>
-
             <div class="input-box">
                 <input type="text" placeholder= "Username" name="username" required>
                 <i class='bx bxs-user' ></i>
             </div>
             <div class="input-box">
-                <input type="`password`" placeholder= "Password" name="password" required>
+                <input type="password" placeholder= "Password" name="password" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
             <div class="forgot">
