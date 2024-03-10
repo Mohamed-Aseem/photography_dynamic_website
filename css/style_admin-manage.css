@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+}
+
+.alert_message{
+    padding: 0.8rem 1.4rem;
+    margin-bottom: 1rem;
+    border-radius: var(--card-border-radius-2);
+  }
+  
+  .error{
+    background-color: var(--color-red-light);
+    color: var(--color-red);
+  }
+  
+  .success{
+    background-color: var(--color-green-light);
+    color: var(--color-green);
+  }
+  
+/*----------------------------------- Content ---------------------------------*/
+
+.divi{
+    position: relative;
+    background: #ebe9e9;
+    width: 100%;
+    padding: 1rem;
+    display: none;
+}
+
+
+/*----------------------------------------- Add Picture --------------------------------------*/
+
+.main-content-add-picture{
+    position: relative;
+    background: #ebe9e9;
+    width: 100%;
+    padding: 1rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-card{
+    width: 50%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    margin: auto;
+    padding: 50px;
+    -webkit-column-break-inside: avoid;
+    /* border: 1px solid #d2d2d3; */
+    border-radius: 5px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.add-card h3{
+    margin-bottom: 40px;
+}
+
+.form-select{
+    margin-bottom: 20px;
+}
+
+button a{
+    list-style: none;
+    text-decoration: none;
+    color: #fff;
+}
+
+form button{
+    margin-right: 20px;
+    margin-top: 40px;
+}
+
+
+
+
