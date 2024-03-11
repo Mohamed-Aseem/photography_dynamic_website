@@ -1,10 +1,34 @@
 <?php
-session_start();
+    session_start();
 
-if(!isset($_SESSION["adminID"])){
-    header("location:admin-login.php");
-}
-include "dbConnection.php";
+    if(!isset($_SESSION["adminID"])){
+        header("location:admin-login.php");
+    }
+    include "dbConnection.php";
+
+
+    //Get Enquiry data and delete from the databse
+    $conCustomer = new mysqli("localhost","root","","mlph_customer");
+
+    $sqlForCustomer = "SELECT * FROM enquiry";
+    $res = $conCustomer->query($sqlForCustomer);
+    if($res->num_rows>0){
+        while($row =$res->fetch_assoc()){
+            $customerName = $row['customer_name'];
+            $customerEmail = $row['email'];
+            $enquiryDate = $row['date'];
+            $customerLocation = $row['location'];
+            $customerMessage = $row['message'];
+
+            //Insert All Enquiries Into Admin Enquiry Table
+            $sqlForInsert = "INSERT INTO enquiry VALUES('' ,'{$customerName}','{$customerEmail}','{$enquiryDate}','{$customerLocation}','{$customerMessage}');";
+            $con->query($sqlForInsert);
+        }
+        //Delete All Data From Customer Enquiry Table
+        $sqlForDelete = "DELETE FROM enquiry";
+        $conCustomer->query($sqlForDelete);
+    }
+
 ?>
 
 <!DOCTYPE html>
