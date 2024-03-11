@@ -49,9 +49,9 @@
                 <input type="password" placeholder= "Password" name="password" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
-            <div class="forgot">
-                <a href="#">Forgot Password</a>
-            </div>
+            <!-- <div class="forgot">
+                <a href="password-reset.php">Forgot Password</a>
+            </div> -->
             <button type="submit" name = "submit" class="btn">Login</button>
         </form>
     </div>
