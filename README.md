@@ -13,7 +13,7 @@ Malcolm's Photography Website is a comprehensive web platform developed for free
 ## Technologies Used:
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** PHP, MySQL
-- **Other Tools:** Image Handling Libraries
+- **Other Tools:** Boostrap, SweetAlert Message Box, Image Handling Libraries
 
 ## Purpose:
 This project aimed to develop a user-friendly and visually appealing website that showcases Malcolm's photography skills, providing visitors with a seamless experience to explore his work and inquire about services.
