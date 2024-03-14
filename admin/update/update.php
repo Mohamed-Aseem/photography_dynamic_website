@@ -34,7 +34,7 @@
                     $pid = $_POST['pid'];
                     $album = $_POST['category'];
                     $type = $_POST['type'];
-                    $target_dir = "../../upload/";
+                    $target_dir = "../upload/";
                     $target_file_new = $target_dir.basename($_FILES['img']['name']);
 
                     $sql = "SELECT * FROM photography WHERE photography_id = {$pid}";
@@ -67,7 +67,7 @@
                             ";
 
                         }else{
-                            unlink($oldImage_url);
+                            unlink('../'.$oldImage_url);;
                         }
 
                     }
@@ -82,7 +82,7 @@
                         header('Location: ../admin_dashboard.php');
                     }
                     else{
-                        if(move_uploaded_file($_FILES['img']['tmp_name'],$target_file_new)){
+                        if(move_uploaded_file($_FILES['img']['tmp_name'],'../'.$target_file_new)){
                             $res = $con->query($sql);
                             $_SESSION['statusTitle'] = "Success";
                             $_SESSION['statusText'] = "Updated Successfully With New Image";
