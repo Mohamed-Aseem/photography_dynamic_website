@@ -21,7 +21,7 @@
                 <div class="album_info">
                     <a href="gallery/gallery_wild-life.php" class="category_button">Wild Life</a>
                     <h4 class="album_details">
-                        <a href="gallery/gallery_wild-life.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima commodi soluta aut. Iusto distinctio vitae, </a>
+                        <a href="gallery/gallery_wild-life.php"> Capturing the untamed beauty of nature's creatures in their natural habitats, showcasing diversity and raw elegance.</a>
                     </h4>
                 </div>
             </article>
@@ -32,7 +32,7 @@
                 <div class="album_info">
                     <a href="gallery/gallery_landscape.php" class="category_button">Landscape</a>
                     <h4 class="album_details">
-                        <a href="gallery/gallery_landscape.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima commodi soluta aut. Iusto distinctio vitae, </a>
+                        <a href="gallery/gallery_landscape.php">Vast vistas and breathtaking scenery from around the world, celebrating the grandeur of Mother Nature.</a>
                     </h4>
                 </div>
             </article>
@@ -43,7 +43,7 @@
                 <div class="album_info">
                     <a href="gallery/gallery_coastal_birds.php" class="category_button">Coastal Birds</a>
                     <h4 class="album_details">
-                        <a href="gallery/gallery_coastal_birds.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima commodi soluta aut. Iusto distinctio vitae, </a>
+                        <a href="gallery/gallery_coastal_birds.php">Avian marvels along the shorelines, highlighting the grace and charm of coastal bird species.</a>
                     </h4>
                 </div>
             </article>
@@ -54,7 +54,7 @@
                 <div class="album_info">
                     <a href="gallery/gallery_wedding.php" class="category_button">Weddings</a>
                     <h4 class="album_details">
-                        <a href="gallery/gallery_wedding.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima commodi soluta aut. Iusto distinctio vitae, </a>
+                        <a href="gallery/gallery_wedding.php">Timeless moments of love and celebration, immortalizing the joy and romance of couples on their special day.</a>
                     </h4>
                 </div>
             </article>
@@ -65,7 +65,7 @@
                 <div class="album_info">
                     <a href="gallery/gallery_portraits.php" class="category_button">Portraits</a>
                     <h4 class="album_details">
-                        <a href="gallery/gallery_portraits.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima commodi soluta aut. Iusto distinctio vitae, </a>
+                        <a href="gallery/gallery_portraits.php">Intimate glimpses into individual souls, portraying personality, emotion, and the essence of human character.</a>
                     </h4>
                 </div>
             </article>
@@ -76,7 +76,7 @@
                 <div class="album_info">
                     <a href="gallery/gallery_special_event.php" class="category_button">Special Event</a>
                     <h4 class="album_details">
-                        <a href="gallery/gallery_special_event.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima commodi soluta aut. Iusto distinctio vitae, </a>
+                        <a href="gallery/gallery_special_event.php">Memorable occasions and significant milestones, capturing the magic and excitement of life's extraordinary moments.</a>
                     </h4>
                 </div>
             </article>
@@ -87,7 +87,7 @@
                 <div class="album_info">
                     <a href="gallery/gallery_maternity.php" class="category_button">Baby Portraits</a>
                     <h4 class="album_details">
-                        <a href="gallery/gallery_maternity.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima commodi soluta aut. Iusto distinctio vitae, </a>
+                        <a href="gallery/gallery_maternity.php">Cherubic innocence and playful delight, documenting the early stages of life with tenderness and warmth.</a>
                     </h4>
                 </div>
             </article>
